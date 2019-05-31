@@ -1,0 +1,115 @@
+<html lang="en-us">
+<head>
+    <link href="css/fontawesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <title>Site Maintenance</title>
+
+    <script src="js/syna-head.min.js"></script>
+</head>
+<body class="bg-success">
+    <nav class="overlay fragment navbar navbar-expand-lg py-2 scroll-spy bg-success navbar-dark" id="nav" role="navigation" style="position: sticky; top: 0; z-index: 10000 !important;">
+    <div class="container">
+        <a class="navbar-brand py-0" href="#">
+            <img src="images/site-maintenance-small.png" height="35" class="d-inline-block align-top" alt="site-maintenance">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse justify-content-between collapse in show" id="navbarCollapse">
+            <ul class="navbar-nav"><li class="nav-item">
+                <a href="#" class="nav-link">
+                    Home
+                </a>
+            </li><li class="nav-item">
+                <a href="#" class="nav-link">
+                    Engineer Details
+                </a>
+            </li><li class="nav-item">
+                <a href="#" class="nav-link">
+                    Modify
+                </a>
+            </li>
+            </ul>
+            <div class="search-container position-relative">
+                <form action="#" class="my-0">
+                    <div class="input-group my-0">
+                        <input type="text" class="form-control py-1" id="search-query-nav" name="s" placeholder="Search Site...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" title="Search"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="search-results-container">
+                    <div class="col p-0">
+                        <div id="search-results-nav" class="col px-0 results">
+                            <p class="p-2">Please enter a word or phrase above</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-lg-block pl-auto">
+        <a class="btn btn-light ignore-color-change" href="https://github.com/modongo/site-maintenance" role="button" title="Github">
+            <i class="fab fa-github mr-2"></i>
+            Star
+        </a>
+    </div>
+</nav>
+    <hr class="mt-2 mb-5">
+
+<div class="container">
+    <!--begin main template-->
+
+
+    {{#block "content"}}
+
+    {{/block}}
+
+
+
+    {{#block "features"}}
+
+
+    {{/block}}
+    <hr class="mt-2 mb-5">
+
+</div>
+<!-- Theme Code -->
+
+    <script async="" defer="" src="js/syna-search.min.js"></script>
+    <script async="" defer="" src="js/syna-main.min.js"></script>
+    <script async="" defer="" src="js/syna-collapse.min.js"></script>
+    <script async="" defer="" src="js/syna-hero.min.js"></script>
+    <script async="" defer="" src="js/bootstrap.min.js"></script>
+    <script async="" defer="" src="js/popper.min.js"></script>
+    <script async="" defer="" src="js/jquery-3.3.1.slim.min.js"></script>
+
+
+    <footer class="overlay fragment container-fluid bg-success" id="copyright">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-md">
+                    <div class="row mx-0 my-2 justify-content-center text-center text-lg-none text-white">
+                        <div class="row mx-0 mr-lg-auto justify-content-center">
+                            <div class="col-auto px-1">© Copyright&nbsp;2019</div>
+                            <div class="col-auto px-0"> by  Michael Odongo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="row mx-0 my-2 justify-content-center">
+                        <ul class="nav ml-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link py-0" href="#">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

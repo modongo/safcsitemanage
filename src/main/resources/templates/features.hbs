@@ -1,0 +1,59 @@
+{{#partial "features"}}
+    <header id="hero" class="fragment hero">
+
+        <div  class="jumbotron text-center header-image mb-0 bg-light">
+
+            <div id="hero-particles-js" class="particles-js"><canvas class="particles-js-canvas-el" width="604" height="455" style="width: 100%; height: 100%;"></canvas></div>
+
+            <div class="row justify-content-center align-items-start">
+
+                <img class="overlay img-fluid" src="images/site-maintenance.png" alt="Syna Theme" width="500px">
+
+            </div>
+
+            <div class="row justify-content-center align-items-start">
+
+                <h1 class="overlay jumbotron-heading my-4 text-body">Manage your sites</h1>
+
+            </div>
+
+            <a class="overlay btn btn-lg m-2 btn-dark " href="#">
+
+                <div class="column justify-content-center align-content-center">Engineer details</div>
+
+            </a>
+
+            <a class="overlay btn btn-lg m-2 btn-primary " href="#">
+
+                <div class="column justify-content-center align-content-center">Add Engineer</div>
+
+            </a>
+
+            <a class="overlay btn btn-lg m-2 btn-dark " href="#">
+
+                <div class="column justify-content-center align-content-center">Add Site</div>
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <script>
+
+        var fragmentName = "hero";window.syna.api.register("hero", "hero-" + fragmentName, {
+
+            selector: "hero-particles-js",
+
+            config: null,
+
+        });
+
+    </script>
+
+
+
+{{/partial}}
+
+{{> layout.hbs}}
+
