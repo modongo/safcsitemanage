@@ -27,7 +27,7 @@ public class App {
         }else {
             port = 4567;
         }
-        port = 4567;
+        port(port);
 
      staticFileLocation("/public");
      Sql2oSiteDao siteDao = new Sql2oSiteDao(DB.sql2o);
