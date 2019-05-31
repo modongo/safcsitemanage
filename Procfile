@@ -1,1 +1,1 @@
-web: ./build/install/saftechteam/bin/saftechteam
+web: ./build/install/safcSiteManager/bin/safcSiteManager
