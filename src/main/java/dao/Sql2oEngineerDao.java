@@ -17,8 +17,8 @@ public class Sql2oEngineerDao implements  EngineerDao{
 
     @Override
     public void add(Engineer engineer){
-        String sql = "INSERT INTO engineers (firstName,secondName,EkNo,assignedSiteId)" +
-                " VALUES (:firstName, :secondName, :EkNo, :assignedSiteId)";
+        String sql = "INSERT INTO engineers (firstname,secondname,EkNo)" +
+                " VALUES (:firstName, :secondName, :ekNo)";
         try(Connection con = DB.sql2o.open()) {
             con.createQuery(sql)
                     .bind(engineer)

@@ -9,8 +9,7 @@ public class Engineer extends Account{
     private int assignedSiteId;
 
 
-
-    public Engineer(String firstName, String secondName, String ekNo, int assignedSiteId) {
+    public Engineer(String firstName, String secondName, String ekNo) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.EkNo = ekNo;
@@ -18,6 +17,23 @@ public class Engineer extends Account{
         this.id = id;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Engineer)) return false;
+        if (!super.equals(o)) return false;
+        Engineer engineer = (Engineer) o;
+        return
+                firstName.equals(engineer.firstName) &&
+                secondName.equals(engineer.secondName) &&
+                EkNo.equals(engineer.EkNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), firstName, secondName, EkNo);
+    }
 
 //    @Override
 //    public int hashCode() {
@@ -55,4 +71,6 @@ public class Engineer extends Account{
     public void setAssignedSiteId(int assignedSiteId) {
         this.assignedSiteId = assignedSiteId;
     }
+    public int getId(){ return id;}
+    public void setId(int id){ this.id = id;}
 }

@@ -4,6 +4,7 @@
     <option name="psiMap">
       <map>
         <entry key="$PROJECT_DIR$/src/main/resources/templates/engineer-details.hbs" />
+        <entry key="$PROJECT_DIR$/src/main/resources/templates/engineer-form.hbs" />
         <entry key="$PROJECT_DIR$/src/main/resources/templates/features.hbs" />
         <entry key="$PROJECT_DIR$/src/main/resources/templates/index.hbs" />
         <entry key="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" />

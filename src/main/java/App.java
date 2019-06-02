@@ -36,13 +36,34 @@ public class App {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/engineerlist",(req,res) -> {
+            Map<String, Object> model = new HashMap<>();
             List<Engineer> engineers = engineerDao.getAll();
             model.put("engineers", engineers);
             List<Sites> sites = siteDao.getAll();
             model.put("sites",sites);
-            return new ModelAndView(model, "index.hbs");
-        }, new HandlebarsTemplateEngine());
+            return new ModelAndView(model,"engineer-details.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/engineernew",(req,res)->{
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model,"engineer-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+        post("/engineernew",(req,res)->{
+            String firstname = req.queryParams("firstname");
+            String secondname = req.queryParams("secondname");
+            String ekno = req.queryParams("ekno");
+            Engineer newEngineer = new Engineer(firstname,secondname,ekno);
+            engineerDao.add(newEngineer);
+            res.redirect("/");
+            return null;
+        },new HandlebarsTemplateEngine());
 
     }
+
 
 }
