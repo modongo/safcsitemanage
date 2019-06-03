@@ -1,0 +1,23 @@
+{{#partial "content"}}
+    <div class="container">
+        {{#if engineers}}
+            <ol  class="list-group">
+                {{#each engineers }}
+                    <li class="list-group-item list-group-item-light" id="engineers/{{id}}"><strong>{{id}}. </strong><strong>Engineer Name: </strong>{{firstName}} {{secondName}}, <strong>Employee Number: </strong>  {{ekNo}}
+                        <ol>
+                            <span class="cell primary">Assigned Sites</span>
+
+                            <li><strong>SiteID: </strong> {{assignedSiteId}}</li>
+                        </ol>
+                    </li>
+                    <hr class="mt-2 mb-5">
+
+                {{/each}}
+            </ol>
+        {{else}}
+            <p>No Engineers</p>
+        {{/if}}
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}
