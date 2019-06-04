@@ -63,6 +63,25 @@ public class App {
             return null;
         },new HandlebarsTemplateEngine());
 
+        get("/sitenew",(req,res)->{
+            Map<String, Object> model = new HashMap<>();
+            List<Engineer> engineers = engineerDao.getAll();
+            model.put("engineers", engineers);
+            List<Sites> sites = siteDao.getAll();
+            model.put("sites",sites);
+            return new ModelAndView(model,"site-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+        post("/sitenew",(req,res)->{
+            String sitename = req.queryParams("sitename");
+            int engId = Integer.parseInt(req.queryParams("id"));
+            int siteId = Integer.parseInt(req.queryParams("siteId"));
+            Sites newSite = new Sites(sitename,engId,siteId);
+            siteDao.add(newSite);
+            res.redirect("/");
+            return null;
+        },new HandlebarsTemplateEngine());
+
     }
 
 

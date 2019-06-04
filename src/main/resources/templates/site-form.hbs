@@ -7,16 +7,23 @@
             <form action="/sitenew" class="needs-validation" novalidate method="post">
                 <div class="form-group">
                     <label for="uname">Sitename:</label>
-                    <input type="text" class="form-control" id="sitename" placeholder="Enter sitename" name="firstname" required>
+                    <input type="text" class="form-control" id="sitename" placeholder="Enter sitename" name="sitename" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="uname">SiteId:</label>
+                    <input type="text" class="form-control" id="siteId" placeholder="Enter siteId" name="siteId" required>
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
                 <div class="form-group">
                     <label for="pwd">Assign site to engineer:</label>
-                    <select id="engId" name="engId" class="form-control" >
-                        {{#each sections}}
-                            <option value="{{id}}" class="form-control" required type="text">{{firstname}}  {{secondname}}</option>
+                    <select id="id" name="id" class="form-control" >
+                        {{#each engineers}}
+                            <option name="{{id}}" value="{{id}}" class="form-control" required type="text">{{firstName}}  {{secondName}}</option>
                         {{/each}}
                     </select>
                     <div class="valid-feedback">Valid.</div>
