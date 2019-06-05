@@ -23,7 +23,7 @@
                     <label for="pwd">Assign site to engineer:</label>
                     <select id="id" name="id" class="form-control" >
                         {{#each engineers}}
-                            <option name="{{id}}" value="{{id}}" class="form-control" required type="text">{{firstName}}  {{secondName}}</option>
+                            <option name="{{id}}" value="{{id}}" class="form-control" required type="text">{{id}}. {{firstName}}  {{secondName}}</option>
                         {{/each}}
                     </select>
                     <div class="valid-feedback">Valid.</div>

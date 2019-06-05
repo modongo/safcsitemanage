@@ -5,7 +5,7 @@
             {{#if engineers}}
                 {{#each engineers }}
                 <li class="list-group-item list-group-item-light" ><strong>{{id}}. </strong><strong>Engineer Name: </strong>{{firstName}} {{secondName}}, <strong>Employee Number: </strong>  {{ekNo}}
-                    <br><button onclick="sites()"><a href="/siteslist">See assigned sites</a></button>
+                    <br><button onclick="sites()"><a href="/siteslist/{{id}}">See assigned sites</a></button>
 
                 </li>
                     <hr class="mt-2 mb-5">

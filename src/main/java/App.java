@@ -63,13 +63,22 @@ public class App {
             return null;
         },new HandlebarsTemplateEngine());
 
-        get("/sitenew",(req,res)->{
+        get("/siteform",(req,res)->{
             Map<String, Object> model = new HashMap<>();
+            List<Engineer> engineers = engineerDao.getAll();
+            model.put("engineers", engineers);
+            return new ModelAndView(model,"site-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/siteslist/:id",(req,res)->{
+            Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(req.params("id"));
+
             List<Engineer> engineers = engineerDao.getAll();
             model.put("engineers", engineers);
             List<Sites> sites = siteDao.getAll();
             model.put("sites",sites);
-            return new ModelAndView(model,"site-form.hbs");
+            return new ModelAndView(model,"site-details.hbs");
         },new HandlebarsTemplateEngine());
 
         post("/sitenew",(req,res)->{
