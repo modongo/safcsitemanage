@@ -73,7 +73,6 @@ public class App {
         get("/siteslist/:id",(req,res)->{
             Map<String, Object> model = new HashMap<>();
             int id = Integer.parseInt(req.params("id"));
-
             List<Engineer> engineers = engineerDao.getAll();
             model.put("engineers", engineers);
             List<Sites> sites = siteDao.getAll();
@@ -84,7 +83,8 @@ public class App {
         post("/sitenew",(req,res)->{
             String sitename = req.queryParams("sitename");
             int engId = Integer.parseInt(req.queryParams("id"));
-            int siteId = Integer.parseInt(req.queryParams("siteId"));
+//            int siteId = Integer.parseInt(req.queryParams("siteId"));
+            System.out.println("*******"+engId+"************");
             Sites newSite = new Sites(sitename,engId);
             siteDao.add(newSite);
             res.redirect("/");
