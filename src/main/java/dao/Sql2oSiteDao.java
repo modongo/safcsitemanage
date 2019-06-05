@@ -17,7 +17,7 @@ public class Sql2oSiteDao implements SiteDao{
 
     @Override
     public void add(Sites sites) {
-        String sql = "INSERT INTO sites (sitename ,eng_id ,siteid) VALUES (:sitename ,:eng_id ,:siteid)";
+        String sql = "INSERT INTO sites (sitename ,eng_id ) VALUES (:sitename ,:eng_id)";
         try(Connection con = DB.sql2o.open()){
             con.createQuery(sql) //make a new variable
                     .bind(sites)
