@@ -70,7 +70,7 @@ public class App {
             return new ModelAndView(model,"site-form.hbs");
         },new HandlebarsTemplateEngine());
 
-        get("/siteslist/:id",(req,res)->{
+        get("/siteslist",(req,res)->{
             Map<String, Object> model = new HashMap<>();
             int id = Integer.parseInt(req.params("id"));
             List<Engineer> engineers = engineerDao.getAll();
