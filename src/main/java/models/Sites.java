@@ -8,7 +8,7 @@ public class Sites extends  Account{
     private int siteid;
 
 
-    public Sites( String sitename, int id, int siteid) {
+    public Sites( String sitename, int id) {
         this.id = id;
         this.sitename = sitename;
         this.eng_id = eng_id;

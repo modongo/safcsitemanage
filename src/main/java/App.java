@@ -85,7 +85,7 @@ public class App {
             String sitename = req.queryParams("sitename");
             int engId = Integer.parseInt(req.queryParams("id"));
             int siteId = Integer.parseInt(req.queryParams("siteId"));
-            Sites newSite = new Sites(sitename,engId,siteId);
+            Sites newSite = new Sites(sitename,engId);
             siteDao.add(newSite);
             res.redirect("/");
             return null;
