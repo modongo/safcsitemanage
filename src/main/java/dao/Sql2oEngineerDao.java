@@ -1,6 +1,7 @@
 package dao;
 
 import models.Engineer;
+import models.Sites;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
@@ -36,6 +37,22 @@ public class Sql2oEngineerDao implements  EngineerDao{
 
         }
 
+    }@Override
+    public Engineer findById(int id) {
+        try(Connection con = DB.sql2o.open()){
+            return con.createQuery("SELECT * FROM engineers WHERE id = :id")
+                    .throwOnMappingFailure(false)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Engineer.class);
+        }
+    }
+    @Override
+    public List<Sites> getAllSitesByEngineer(int engineerId) {
+        try(Connection con = DB.sql2o.open()){
+            return con.createQuery("SELECT * FROM sites WHERE eng_id = :engineerid")
+                    .addParameter("engineerid", engineerId)
+                    .executeAndFetch(Sites.class);
+        }
     }
 
 

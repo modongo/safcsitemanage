@@ -70,12 +70,12 @@ public class App {
             return new ModelAndView(model,"site-form.hbs");
         },new HandlebarsTemplateEngine());
 
-        get("/siteslist",(req,res)->{
+        get("/:id",(req,res)->{
             Map<String, Object> model = new HashMap<>();
             int id = Integer.parseInt(req.params("id"));
-            List<Engineer> engineers = engineerDao.getAll();
-            model.put("engineers", engineers);
-            List<Sites> sites = siteDao.getAll();
+            Engineer foundEngineer = engineerDao.findById(id);
+            model.put("engineers", foundEngineer);
+            List<Sites> sites = engineerDao.getAllSitesByEngineer(id);
             model.put("sites",sites);
             return new ModelAndView(model,"site-details.hbs");
         },new HandlebarsTemplateEngine());
