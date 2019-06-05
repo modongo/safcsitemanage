@@ -46,10 +46,12 @@ public class Sql2oEngineerDao implements  EngineerDao{
                     .executeAndFetchFirst(Engineer.class);
         }
     }
+
+
     @Override
     public List<Sites> getAllSitesByEngineer(int engineerId) {
         try(Connection con = DB.sql2o.open()){
-            return con.createQuery("SELECT * FROM sites WHERE eng_id = :engineerid")
+            return con.createQuery("select sites.sitename from sites inner join engineers on sites.eng_id=engineers.id where sites.id=:engineerid")
                     .addParameter("engineerid", engineerId)
                     .executeAndFetch(Sites.class);
         }
