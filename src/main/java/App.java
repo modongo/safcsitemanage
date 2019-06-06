@@ -91,7 +91,25 @@ public class App {
             return null;
         },new HandlebarsTemplateEngine());
 
+        get("/engineerdelete",(req,res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Engineer> engineers = engineerDao.getAll();
+            model.put("engineers", engineers);
+            return new ModelAndView(model,"engineer-delete.hbs");
+        },new HandlebarsTemplateEngine());
+
+
+
+        get("/sitedelete",(req,res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Sites> sites = siteDao.getAll();
+            model.put("sites",sites);
+            return new ModelAndView(model,"site-delete.hbs");
+        },new HandlebarsTemplateEngine());
+
+
     }
+
 
 
 }
