@@ -1,6 +1,4 @@
 {{#partial "content"}}
-    {{#if engineers}}
-    {{else}}
 <div class="container">
     <h5>Delete a Site!</h5>
 <form action="/sitedelete" class="needs-validation" novalidate method="post">
@@ -8,7 +6,7 @@
     <label for="pwd">Delete site:</label>
     <select id="id" name="id" class="form-control" >
         {{#each sites}}
-            <option name="{{id}}" value="{{id}}" class="form-control" required type="text">{{id}}. {{sitename}} </option>
+            <option name="{{id}}" value="{{id}}" class="form-control" required type="text">{{sitename}} </option>
         {{/each}}
     </select>
     <div class="valid-feedback">Valid.</div>
@@ -24,7 +22,7 @@
     <button type="submit" class="btn btn-success">Submit</button>
 </form>
 </div>
-{{/if}}
+
 <script>
     // Disable form submissions if there are invalid fields
     (function() {

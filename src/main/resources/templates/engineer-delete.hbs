@@ -1,14 +1,12 @@
 {{#partial "content"}}
-    {{#if sites}}
-    {{else}}
         <div class="container">
-            <h5>Delete a Site!</h5>
+            <h5>Delete a Engineer!</h5>
             <form action="/engineerdelete" class="needs-validation" novalidate method="post">
                 <div class="form-group">
                     <label for="pwd">Delete site:</label>
                     <select id="id" name="id" class="form-control" >
                         {{#each engineers}}
-                            <option name="{{id}}" value="{{id}}" class="form-control" required type="text">{{id}}. {{firtsname}} {{secondname}}  </option>
+                            <option name="{{engineeers.id}}" value="{{id}}" class="form-control" required type="text">{{firstName}} {{secondName}} , {{ekNo}} </option>
                         {{/each}}
                     </select>
                     <div class="valid-feedback">Valid.</div>
@@ -24,7 +22,7 @@
                 <button type="submit" class="btn btn-success">Submit</button>
             </form>
         </div>
-    {{/if}}
+
     <script>
         // Disable form submissions if there are invalid fields
         (function() {

@@ -70,15 +70,6 @@ public class App {
             return new ModelAndView(model,"site-form.hbs");
         },new HandlebarsTemplateEngine());
 
-        get("/:id",(req,res)->{
-            Map<String, Object> model = new HashMap<>();
-            int id = Integer.parseInt(req.params("id"));
-            Engineer foundEngineer = engineerDao.findById(id);
-            model.put("engineers", foundEngineer);
-            List<Sites> sites = engineerDao.getAllSitesByEngineer(id);
-            model.put("sites",sites);
-            return new ModelAndView(model,"site-details.hbs");
-        },new HandlebarsTemplateEngine());
 
         post("/sitenew",(req,res)->{
             String sitename = req.queryParams("sitename");
@@ -98,8 +89,6 @@ public class App {
             return new ModelAndView(model,"engineer-delete.hbs");
         },new HandlebarsTemplateEngine());
 
-
-
         get("/sitedelete",(req,res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Sites> sites = siteDao.getAll();
@@ -107,6 +96,15 @@ public class App {
             return new ModelAndView(model,"site-delete.hbs");
         },new HandlebarsTemplateEngine());
 
+        get("/:id",(req,res)->{
+            Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(req.params("id"));
+            Engineer foundEngineer = engineerDao.findById(id);
+            model.put("engineers", foundEngineer);
+            List<Sites> sites = engineerDao.getAllSitesByEngineer(id);
+            model.put("sites",sites);
+            return new ModelAndView(model,"site-details.hbs");
+        },new HandlebarsTemplateEngine());
 
     }
 
