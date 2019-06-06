@@ -2,9 +2,9 @@
 
         <ol  class="list-group">
 
-                <li class="list-group-item list-group-item-light" id="{{id}}"><strong>{{id}}. </strong><strong>Engineer Name: </strong>{{firstName}} {{secondName}}, <strong>Employee Number: </strong>  {{ekNo}}
+                <li class="list-group-item list-group-item-light" id="{{id}}"><span class="cell primary">Assigned Sites</span>
                     <ol>
-                        <span class="cell primary">Assigned Sites</span>
+
                         {{#each sites }}
                         <li><strong>SiteID: </strong> {{sitename}}</li>
                 {{/each}}
