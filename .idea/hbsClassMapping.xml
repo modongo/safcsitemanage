@@ -8,6 +8,7 @@
         <entry key="$PROJECT_DIR$/src/main/resources/templates/features.hbs" />
         <entry key="$PROJECT_DIR$/src/main/resources/templates/index.hbs" />
         <entry key="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" />
+        <entry key="$PROJECT_DIR$/src/main/resources/templates/site-delete.hbs" />
         <entry key="$PROJECT_DIR$/src/main/resources/templates/site-details.hbs" />
         <entry key="$PROJECT_DIR$/src/main/resources/templates/site-form.hbs" />
       </map>
